@@ -1,0 +1,53 @@
+Gender,ID_Geography,Full_or_Part_Time,Title,Year,Avg Salary,Total_Population
+Male,04000US42,Full-time,Registered nurses,2019,70580.63570306363,15276
+Male,04000US42,Full-time,Other managers,2019,115279.15485869144,85239
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2019,50504.629075994846,118008
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2019,36499.6498220552,80362
+Male,04000US42,Full-time,Retail salespersons,2019,53713.7382821609,38595
+Female,04000US42,Full-time,Registered nurses,2019,69670.55326140873,112896
+Female,04000US42,Full-time,Other managers,2019,87194.49822794615,51635
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2019,30100.72416329533,5438
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2019,29083.289519530532,21812
+Female,04000US42,Full-time,Retail salespersons,2019,34998.54108853473,23279
+Male,04000US42,Full-time,Registered nurses,2018,83065.51539662268,14094
+Male,04000US42,Full-time,Other managers,2018,105924.46862848008,83834
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2018,50454.15282799535,124735
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2018,36696.50969040095,81008
+Male,04000US42,Full-time,Retail salespersons,2018,52598.29398322653,42448
+Female,04000US42,Full-time,Registered nurses,2018,67100.64640559387,103828
+Female,04000US42,Full-time,Other managers,2018,87815.76518463712,44601
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2018,31418.805937154586,6333
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2018,29725.878206383397,15321
+Female,04000US42,Full-time,Retail salespersons,2018,38291.085311046285,25366
+Male,04000US42,Full-time,Registered nurses,2017,80387.5292524763,14033
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2017,46920.18295756478,117049
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2017,37026.13617601296,77767
+Male,04000US42,Full-time,Retail salespersons,2017,53890.172534526355,35987
+Female,04000US42,Full-time,Registered nurses,2017,67214.166706725,104015
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2017,32379.270410195142,5022
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2017,26691.990325900515,14575
+Female,04000US42,Full-time,Retail salespersons,2017,36084.46999293076,26877
+Male,04000US42,Full-time,Registered nurses,2016,68129.08447160316,11128
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2016,47333.438450220696,112145
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2016,35233.155072151625,69645
+Male,04000US42,Full-time,Retail salespersons,2016,49648.41920105613,40904
+Female,04000US42,Full-time,Registered nurses,2016,64723.68338400152,105260
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2016,36137.982989064396,4115
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2016,28289.153297026787,13588
+Female,04000US42,Full-time,Retail salespersons,2016,31106.45618633664,30139
+Male,04000US42,Full-time,Registered nurses,2015,68907.87305976807,11210
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2015,46087.886521691136,117767
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2015,33792.24082690688,77155
+Male,04000US42,Full-time,Retail salespersons,2015,47700.442837798626,41356
+Female,04000US42,Full-time,Registered nurses,2015,64629.08175520099,98587
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2015,26274.930133333335,3750
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2015,28248.533596586203,15701
+Female,04000US42,Full-time,Retail salespersons,2015,28734.92122879413,21810
+Male,04000US42,Full-time,Registered nurses,2014,65841.13802545886,13512
+Male,04000US42,Full-time,Driver/sales workers & truck drivers,2014,44708.86606590023,119514
+Male,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2014,33659.893253259754,73932
+Male,04000US42,Full-time,Retail salespersons,2014,55570.49864715903,39916
+Female,04000US42,Full-time,Registered nurses,2014,62452.38368661658,99967
+Female,04000US42,Full-time,Driver/sales workers & truck drivers,2014,30688.311741935482,3875
+Female,04000US42,Full-time,"Laborers & freight, stock, & material movers, hand",2014,25718.498799176577,17488
+Female,04000US42,Full-time,Retail salespersons,2014,39315.10171982365,25177
