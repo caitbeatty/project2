@@ -59,8 +59,16 @@ def household():
 
     return jsonify(all_names)
 
+# create route for salary by gender
+@app.route("/api/v1.0/query_url")
+# Query for the date and precipitation for the last year
+    salaries = session.query(query_url.date, query_url.prcp).\
+        filter(Measurement.date >= prev_year).all()
 
-# @app.route("/api/v1.0/passengers")
+    # Dict with date as the key and prcp as the value
+    precip = {date: prcp for date, prcp in precipitation}
+    return jsonify(precip)
+
 # def passengers():
 #     # Create our session (link) from Python to the DB
 #     session = Session(engine)

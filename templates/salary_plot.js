@@ -1,5 +1,5 @@
 function buildMetadata() {
-    d3.json("philly.sqlite/query_url").then((data) => {
+    d3.json("/api/v1.0/query_url")).then((data) => {
 
         var data1 = data
     //   var metadata = data.metadata;
