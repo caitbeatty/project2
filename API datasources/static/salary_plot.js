@@ -1,20 +1,21 @@
 f// pull in JSON file and populate the drop down 
 d3.json("/api/v1.0/query_url").then((data)=> {
+console.log(data)
 
-    var datalist = Object.values(data);
+    // var datalist = Object.values(data);
 
-    var ele = document.getElementById('selDataset');
-    for (var i = 0; i < datalist.length; i++) {
-        // POPULATE SELECT ELEMENT WITH JSON.
-        ele.innerHTML = ele.innerHTML +
-            '<option value="' + datalist[i]+ '">' + datalist[i] + '</option>';
+    // var ele = document.getElementById('selDataset');
+    // for (var i = 0; i < datalist.length; i++) {
+    //     // POPULATE SELECT ELEMENT WITH JSON.
+    //     ele.innerHTML = ele.innerHTML +
+    //         '<option value="' + datalist[i]+ '">' + datalist[i] + '</option>';
     }   
 
     // // Be able to click on an ID and have it recognize it - On change to the DOM, call getData()
     // d3.selectAll("#selDataset").on("change", getData);
 
 // Function called by DOM changes
-function getData() {
+// function getData() {
     // var dropdownMenu = d3.select("#selDataset");
     // // Assign the value of the dropdown menu option to a variable
     // var idno = dropdownMenu.property("value");
@@ -44,23 +45,23 @@ function getData() {
     // var slicedSampleValues = sampleValues.slice(0, 10);
     // var slicedOtuLabels = otuLabels.slice(0, 10);
 
-    //make bar chart
-      var barData = [{
-        x: slicedSampleValues.reverse(),
-        y: stringId.reverse(), 
-        text: slicedOtuLabels.reverse(),
-        type: 'bar',
-      }];
+    // //make bar chart
+    //   var barData = [{
+    //     x: slicedSampleValues.reverse(),
+    //     y: stringId.reverse(), 
+    //     text: slicedOtuLabels.reverse(),
+    //     type: 'bar',
+    //   }];
     
-      var layout = {
-        height: 600,
-        width: 800
-      };
+    //   var layout = {
+    //     height: 600,
+    //     width: 800
+    //   };
     
-      Plotly.newPlot("bar", barData, layout);
+    //   Plotly.newPlot("bar", barData, layout);
 
 
-      // make bubble chart
+    //   // make bubble chart
 
     //   
   
@@ -69,22 +70,22 @@ function getData() {
 
 //demographic info
       //get array for data in metadata
-      var demographics = Object.values(data[0].metadata);
+      // var demographics = Object.values(data[0].metadata);
 
      
 
-      // //put data that used picked into a dictionary of its own
-      var requiredDemo = demographics.filter(checkID)[0];
+      // // //put data that used picked into a dictionary of its own
+      // var requiredDemo = demographics.filter(checkID)[0];
       
 
-      // //make chart to show id, ethnicity, gender, age, location, bbtype, wfreq
-        var demoInfo = d3.select("#sample-metadata");
+      // // //make chart to show id, ethnicity, gender, age, location, bbtype, wfreq
+      //   var demoInfo = d3.select("#sample-metadata");
 
-          // build the metadata table
-      demoInfo.html("");
-      Object.entries(requiredDemo).forEach(([key, value]) => {
-          demoInfo.append("p").text(`${key}: ${value}`)
-      });
+      //     // build the metadata table
+      // demoInfo.html("");
+      // Object.entries(requiredDemo).forEach(([key, value]) => {
+      //     demoInfo.append("p").text(`${key}: ${value}`)
+      // });
      
  
         
@@ -92,9 +93,9 @@ function getData() {
 
 
    
-  }
+//   }
   
-  getData();
+//   getData();
 
    
-})
+// })
