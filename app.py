@@ -38,6 +38,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def welcome():
+    print("in route route")
     return render_template("index.html")
 
 
@@ -64,14 +65,18 @@ def salaries():
     session = Session(engine)
 
 
-# Query for the date and precipitation for the last year
-    salary = session.query(query_url.Gender, query_url.ID_Geography, query_url.Full_or_Part_Time, query_url.Title, query_url.Year, query_url.Avg_Salary, query_url.Total_Population).all()
+    # Query for the date and precipitation for the last year
+    # salary = session.query(query_url.Gender, query_url.ID_Geography, query_url.Full_or_Part_Time, query_url.Title, query_url.Year, query_url.Avg_Salary, query_url.Total_Population).all()
     
-    session.close()
-    # Convert list of tuples into normal list
-    all_salaries = list(np.ravel(salary))
 
-    return jsonify(all_salaries)
+    salary = session.query(query_url.Gender, query_url.Title, func.avg(query_url.Avg_Salary)).\
+    group_by(query_url.Gender, query_url.Title).\
+    all()    
+
+
+    session.close()
+
+    return jsonify(salary)
 
 
 
