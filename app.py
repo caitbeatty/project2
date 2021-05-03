@@ -26,6 +26,7 @@ household_income = Base.classes.household
 
 query_url = Base.classes.query_url
 
+
 #################################################
 # Flask Setup
 ################################################
@@ -40,6 +41,8 @@ app = Flask(__name__)
 def welcome():
     print("in route route")
     return render_template("index.html")
+
+    
 
 
 @app.route("/api/v1.0/household")

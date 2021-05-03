@@ -65,6 +65,7 @@
             <h1 class="description-header">Philadelphia:By Neighborhood</h1>
             <hr class="description-hr"/>
             <img src="assets/images/Fig1.png" alt="" id="description-image"/>
+            <div id="myDiv"></div>
             <p>Add some text in here about the project.</p>
             <p>another line about the project.</p>
           </article>
@@ -94,7 +95,7 @@
     <footer class="footer navbar-fixed-bottom">
       <div class="two-toned-footer-color"></div>
       <p class="text-muted text-muted-footer text-center">
-        &copy; Sources: https://www.opendataphilly.org/, enter another 
+        &copy; Data Sources: https://www.opendataphilly.org/
       </p>
     </footer>
     <!-- End of footer -->
@@ -104,6 +105,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- Bootstrap CDN -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="{{ url_for('static', filename='js/salary_plot.js') }}"></script>
     
