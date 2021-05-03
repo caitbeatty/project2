@@ -32,7 +32,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="index.html" id="logo">Home</a>
+              <a class="navbar-brand" href="/" id="logo">Home</a>
             </div>
           </div>
 
@@ -61,7 +61,7 @@
           <h1 class="description-header">Salary comparison Male vs Female</h1>
           <hr class="description-hr"/>
           <p class="description-text">BAR CHART REPRESENTING ...</p>
-          <div id="bar"></div>
+          <div id="myDiv"></div>
         </div>
         <div class="col-md-12">
           <h2 class="comparison-header">enter paragraph of findings here</h2>
@@ -84,10 +84,12 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
     <!-- Bootstrap CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script src="salary_plot.js"></script> -->
+
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="salary_plot.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/salary_plot.js') }}"></script>
     <!-- <script src="{{ url_for('static', filename='js/salary_plot.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
   </body>

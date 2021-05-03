@@ -42,7 +42,9 @@ def welcome():
     print("in route route")
     return render_template("index.html")
 
-    
+@app.route("/salary")
+def hi():
+    return render_template("salaries.html")
 
 
 @app.route("/api/v1.0/household")
