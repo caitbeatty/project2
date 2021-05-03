@@ -47,6 +47,11 @@ def hi():
     return render_template("salaries.html")
 
 
+@app.route("/schools")
+def yellow():
+    return render_template(schools.html)
+
+
 @app.route("/api/v1.0/household")
 def household():
     # Create our session (link) from Python to the DB
