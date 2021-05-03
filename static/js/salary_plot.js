@@ -54,7 +54,10 @@ d3.json("/api/v1.0/query_url").then((data)=> {
       };
       var points = [male, female];
       var layout = {barmode: "group"};
-      Plotly.newPlot('myDiv', points, layout);
+      var margin= go.Margin(
+        l=250,
+        r=50)
+      Plotly.newPlot('myDiv', points, layout, margin);
      
 
 })  
