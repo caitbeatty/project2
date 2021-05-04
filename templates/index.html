@@ -1,112 +1,126 @@
 <!-- Code for Home page -->
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<head>
 
-    <title>Living in Philadelphia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="/../static/css/bootstrap.min.css" media="screen">
+  <title>Living in Philadelphia</title>
 
-    <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="/../static/css/styles.css" media="screen">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="/../static/css/bootstrap.min.css" media="screen">
 
-  </head>
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="/../static/css/styles.css" media="screen">
 
-  <body>
-    <!-- Start of navbar -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid navbar-custom">
+</head>
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="row">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="#" id="logo">Neighborhoods</a>
+<body>
+  <!-- Start of navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navbar-custom">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="col-xs-9 phone-nav">
+            <a class="navbar-brand" href="#" id="logo">Neighborhoods</a>
+          </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Plots <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="visualizations/add here.html">Avg Income per neighborhood</a></li>
+                <li><a href="salary">Salaries per gender</a></li>
+                <li><a href="schools">Schools</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="comparison.html">Comparison</a></li>
+              <li><a href="data.html">Data</a></li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- End of navbar -->
+
+  <!-- Start of container -->
+  <div class="container">
+    <section class="row">
+      <div class="col-md-8">
+        <article class="description-content">
+          <h1 class="description-header">Philadelphia:By Neighborhood</h1>
+          <hr class="description-hr" />
+          <img src="assets/images/Fig1.png" alt="" id="description-image" />
+          <p>Add some text in here about the project.</p>
+          <p>another line about the project.</p>
+        </article>
+      </div>
+      <div class="col-md-4">
+
+        <!-- Start of Visualizations imageNav Area -->
+        <section id="imageNav-area">
+          <div class="imageNav-content">
+            <h2 class="imageNav-header">Additional Items of Interst</h2>
+            <hr />
+            <div id="images">
+              <a href="salary">
+                <p> Click here for salary by gender!</p>
+                <a href="schools">
+                  <p>Click here for information on schools!</p>
             </div>
           </div>
+        </section>
+        <!-- End of the Visualizations imageNav Area -->
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right navbar-right-custom">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                 <li><a href="visualizations/add here.html">Avg Income per neighborhood</a></li>
-                  <li><a href="salary">Salaries per gender</a></li>
-                  <li><a href="schools">Schools</a></li>
-                </ul>
-              </li>
-              <!-- <li><a href="comparison.html">Comparison</a></li>
-              <li><a href="data.html">Data</a></li> -->
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div>
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!-- End of navbar -->
+      </div>
+    </section>
+  </div>
+  <!-- End of container -->
 
-    <!-- Start of container -->
-    <div class="container">
-      <section class="row">
-        <div class="col-md-8">
-          <article class="description-content">
-            <h1 class="description-header">Philadelphia:By Neighborhood</h1>
-            <hr class="description-hr"/>
-            <img src="assets/images/Fig1.png" alt="" id="description-image"/>
-            <p>Add some text in here about the project.</p>
-            <p>another line about the project.</p>
-          </article>
-        </div>
-        <div class="col-md-4">
+  <!-- Start of footer -->
+  <footer class="footer navbar-fixed-bottom">
+    <div class="two-toned-footer-color"></div>
+    <p class="text-muted text-muted-footer text-center">
+      Data Source to build chart: https://www.opendataphilly.org/
+    </p>
+  </footer>
+  <!-- End of footer -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-          <!-- Start of Visualizations imageNav Area -->
-          <section id="imageNav-area">
-            <div class="imageNav-content">
-              <h2 class="imageNav-header">Additional Items of Interst</h2>
-              <hr />
-              <div id="images">
-                <a href="salary"><p> Click here for salary by gender!</p>
-                <a href="schools"><p>Click here for information on schools!</p>
-              </div>
-            </div>
-          </section>
-          <!-- End of the Visualizations imageNav Area -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 
-        </div>
-      </section>
-    </div>
-    <!-- End of container -->
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    <!-- Start of footer -->
-    <footer class="footer navbar-fixed-bottom">
-      <div class="two-toned-footer-color"></div>
-      <p class="text-muted text-muted-footer text-center">
-         Data Source to build chart: https://www.opendataphilly.org/
-      </p>
-    </footer>
-    <!-- End of footer -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <!-- jQuery CDN -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Bootstrap CDN -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap CDN -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-   
-    
+  <!-- JavaScript -->
+  <script type="text/javascript" src="static/js/homepage_plot.js"></script>
 
-  </body>
+
+
+</body>
 
 </html>
