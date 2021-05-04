@@ -99,7 +99,7 @@ def school():
 
     session.close()
 
-    return jsonify(philly_schools)
+    return philly_schools
 
 
 
