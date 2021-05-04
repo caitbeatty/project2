@@ -26,6 +26,8 @@ household_income = Base.classes.household
 
 query_url = Base.classes.query_url
 
+schools = Base.classes.schools
+
 
 #################################################
 # Flask Setup
@@ -49,7 +51,7 @@ def hi():
 
 @app.route("/schools")
 def yellow():
-    return render_template(schools.html)
+    return render_template("schools.html")
 
 
 @app.route("/api/v1.0/household")
@@ -88,7 +90,16 @@ def salaries():
 
     return jsonify(salary)
 
+@app.route("/api/v1.0/schools")
+def school():
+    # Create session (link) from SQLite to Flask 
+    session = Session(engine)
 
+    philly_schools = session.query(schools.id, schools.school_name, schools.abbrv_name, schools.school_level, schools.type, schools.grade_level, schools.geolocation, schools.address, schools.website).all()
+
+    session.close()
+
+    return jsonify(philly_schools)
 
 
 
