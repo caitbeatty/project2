@@ -28,6 +28,8 @@ query_url = Base.classes.query_url
 
 schools = Base.classes.schools
 
+census = Base.classes.censustracts
+
 
 #################################################
 # Flask Setup
@@ -100,6 +102,17 @@ def school():
     session.close()
 
     return philly_schools
+
+@app.route("/api/v1.0/censustracts")
+def censusdata():
+    # Create session (link) from SQLite to Flask 
+    session = Session(engine)
+
+    census_tracts = session.query(census.index, census.recordnum, census.geoid, census.latitude, census.longitude, census.coordinate_0, census.coordinate_1).all()
+
+    session.close()
+
+    return jsonify(census_tracts)
 
 
 
