@@ -1,5 +1,5 @@
 d3.json("/api/v1.0/censustracts").then((data) => {
-    console.log(data)
+    // console.log(data)
     var coord_dict = {}
     var prev_geoID = 42101009400
     var geoid = 0
@@ -11,6 +11,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
             curr_arr = [row[6], row[5]]
             coord_arr.push(curr_arr)
             prev_geoID = geoid
+            coord_dict[geoid] = coord_arr
         }
         else{
             coord_arr = []
@@ -21,7 +22,14 @@ d3.json("/api/v1.0/censustracts").then((data) => {
         }
         
     })
-    console.log(coord_dict)
+    // console.log(coord_dict)
+
+    Object.entries(coord_dict).forEach(([key, value]) => {
+        console.log(key, value[0][1])
+        // for(i=0; i< value.length; i++){
+        //     console.log(key, value[i][1])
+        // };
+    });
 
 
 
