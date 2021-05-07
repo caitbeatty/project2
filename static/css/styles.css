@@ -1,17 +1,10 @@
 /* ----DEFAULT ELEMENT STYLING START---- */
 html {
   /* Positioning */
-  /* position: relative; */
+  position: relative;
 
   /* Box-model */
-  /* min-height: 100%; */
-}
-
-#map,
-body,
-html {
-  /* height: 100%; */
-  height: 200 px;
+  min-height: 100%;
 }
 
 body {
@@ -176,7 +169,7 @@ body {
 
 /* ----IMAGE NAV START---- */
 #imageNav-area {
-  /* width: 100%; */
+  width: 100%;
 
   /* Box-model */
   padding: 30px 30px 43px;
