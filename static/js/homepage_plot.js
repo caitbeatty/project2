@@ -31,7 +31,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
     Object.entries(coord_dict).forEach(([key, value]) => {
         coordinates.push(value)
     });
-
+    
     // Remove records with NaN lat or lng values
     coordinates.splice(210)
 
