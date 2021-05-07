@@ -37,6 +37,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
     coordinates.splice(210)
 
     var tracts = new L.LayerGroup()
+    var household = new L.LayerGroup()
 
     // Create layers to be the background of the map
     var outdoormap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -47,7 +48,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
         id: "mapbox/outdoors-v11",
         accessToken: API_KEY
     });
-    
+
     var grayscalemap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
         tileSize: 512,
@@ -78,8 +79,8 @@ d3.json("/api/v1.0/censustracts").then((data) => {
 
     // Create polygon layer pulling data from the coordinates array
     L.polygon(coordinates, {
-        color: "red",
-        fillcolor: "red",
+        color: "purple",
+        fillcolor: "purple",
         fillOpacity: 0.25
     }).addTo(tracts)
     tracts.addTo(myMap)
@@ -93,11 +94,40 @@ d3.json("/api/v1.0/censustracts").then((data) => {
 
     // Create overlay object to hold overlay layer
     var overlayMaps = {
-        "Census Tracts": tracts
+        "Census Tracts": tracts,
+        "Household Income": household
     }
 
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
     L.control.layers(baseMaps, overlayMaps).addTo(myMap);
+
+    // Function to detemine marker size based on magnitude
+function markerSize(income) {
+    return income/10000
+  }
+
+
+    d3.json("/api/v1.0/census_household").then((householdData) => {
+        householdData.map(row => {
+        var lat = row[4]
+        var lng = row[5]
+        var householdIncome = row[1]
+        var GEOID = row[3]
+        marker = new L.circleMarker([lat, lng],{
+                radius: markerSize(householdIncome),
+                fillColor: "aqua",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+        }).bindPopup(`<strong>Household Income: $</strong>${householdIncome}<br><strong>GEOID:</strong> ${GEOID}`).addTo(household)
+
+        household.addTo(myMap)
+
+        
+
+    })
+})
 })

@@ -22,7 +22,7 @@ Base.prepare(engine, reflect=True)
 
 
 # Save reference to the table
-household_income = Base.classes.household
+census_household = Base.classes.census_household
 
 query_url = Base.classes.query_url
 
@@ -56,21 +56,21 @@ def yellow():
     return render_template("schools.html")
 
 
-@app.route("/api/v1.0/household")
+@app.route("/api/v1.0/census_household")
 def household():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
     """Return a list of all philly names"""
     # Query all passengers
-    results = session.query(household_income.ID_Geography, household_income.Household_Income_by_Race, household_income.ID_Year).all()
+    results = session.query(census_household.index, census_household.Household_Income, census_household.ID_Year, census_household.geoid, census_household.latitude, census_household.longitude).all()
 
     session.close()
 
     # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+    # all_names = list(np.ravel(results))
 
-    return jsonify(all_names)
+    return jsonify(results)
 
 # create route for salary by gender
 @app.route("/api/v1.0/query_url")
