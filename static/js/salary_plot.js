@@ -1,6 +1,6 @@
 // pull in JSON file and populate the drop down 
 d3.json("/api/v1.0/query_url").then((data)=> {
-    // console.log(data)
+   
 
 
     var jobs = {};
@@ -53,10 +53,7 @@ d3.json("/api/v1.0/query_url").then((data)=> {
         type: "bar"
       };
       var points = [male, female];
-      var layout = {barmode: "group"};
-    //   var margin= go.Margin(
-    //     l=250,
-    //     r=50)
+      var layout = {barmode: "group"}
       Plotly.newPlot('myDiv', points, layout);
      
 
