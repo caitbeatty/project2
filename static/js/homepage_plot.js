@@ -31,7 +31,8 @@ d3.json("/api/v1.0/censustracts").then((data) => {
     Object.entries(coord_dict).forEach(([key, value]) => {
         coordinates.push(value)
     });
-    
+
+
     // Remove records with NaN lat or lng values
     coordinates.splice(210)
 
@@ -72,7 +73,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
             tracts
         ]
     });
-
+    // set outdoormap as the default layout when page is loaded
     outdoormap.addTo(myMap)
 
     // Create polygon layer pulling data from the coordinates array
@@ -81,7 +82,6 @@ d3.json("/api/v1.0/censustracts").then((data) => {
         fillcolor: "red",
         fillOpacity: 0.25
     }).addTo(tracts)
-
     tracts.addTo(myMap)
 
     // Define baseMaps object to hold base layers
