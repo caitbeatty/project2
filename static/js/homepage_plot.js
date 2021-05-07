@@ -1,57 +1,27 @@
 d3.json("/api/v1.0/censustracts").then((data) => {
     console.log(data)
-
-    // var dict = {}
-    // var prev_geoID = 42101009400
-    // var curr_geoID = 0
-    // var coord_dict = {}
-    // // var coord_arr = []
-    // var curr_arr = []
-    // data.forEach(function(row){
-    //     // console.log(row)
-    //     curr_geoID = parseInt(row[2])
-    //     // console.log(curr_geoID)
-    //    // console.log(row)
-    //    var coord_arr = []
-
-    //    if(curr_geoID == prev_geoID) {
-    //      curr_arr = [row[6], row[5]]
-    //     //  console.log(curr_arr)
-    //     //  coord_arr = coord_arr
-    //      coord_arr.push(curr_arr)
-    //      prev_geoID = curr_geoID
-    //    }
-    //    else {
-    //     //    console.log(prev_geoID, coord_arr)
-    //        //dict[geoID] = prev_geoID
-    //        var coord_arr = []
-    //        prev_geoID = curr_geoID
-    //        curr_arr = [row[6], row[5]]
-    //        coord_arr.push(curr_arr)
-           
-    //    }
-
-    // })
     var coord_dict = {}
-    var geoid = 0
     var prev_geoID = 42101009400
-    var list_value = []
-    // var prev_row = []
-    var master = []
+    var geoid = 0
+    var curr_arr = []
+    var coord_arr = []
     data.map(row => {
         geoid = parseInt(row[2])
         if(geoid == prev_geoID){
-            list_value = [row[6], row[5]]
-            master.push(list_value)
+            curr_arr = [row[6], row[5]]
+            coord_arr.push(curr_arr)
+            prev_geoID = geoid
         }
         else{
-            master = []
-            list_value = [row[6], row[5]]
-            master.push(list_value)
+            coord_arr = []
+            prev_geoID = geoid
+            curr_arr = [row[6], row[5]]
+            coord_arr.push(curr_arr)
+            coord_dict[geoid] = coord_arr
         }
-        console.log(master)
         
     })
+    console.log(coord_dict)
 
 
 
