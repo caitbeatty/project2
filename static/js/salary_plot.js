@@ -58,11 +58,4 @@ d3.json("/api/v1.0/query_url").then((data)=> {
      
 
 })  
-    // var datalist = Object.values(data);
-
-    // var ele = document.getElementById('selDataset');
-    // for (var i = 0; i < datalist.length; i++) {
-    //     // POPULATE SELECT ELEMENT WITH JSON.
-    //     ele.innerHTML = ele.innerHTML +
-    //         '<option value="' + datalist[i]+ '">' + datalist[i] + '</option>';
-    // })   
+    
