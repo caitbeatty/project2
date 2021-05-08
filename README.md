@@ -8,8 +8,11 @@ The following analysis looks at some of these factors, ones that would be most i
 
 ##The analysis itself followed this process:
    * Get the data set - The data was gathered through api calls to [OpenDataPhilly](https://www.opendataphilly.org/dataset)
-   * Import and Clean the data - data was gathered in jupyter notebooks where initial cleaning and transformation was conducted
-   * Load data to SQLite - once cleaned data was loaded as tables to a SQLite database
+   * Import and Clean the data - data was gathered in jupyter notebooks where initial cleaning and transformation was conducted. Load data to SQLite - once cleaned data was loaded as tables to a SQLite database
+        ** householdInfo - initial transformation of household income information
+	** Household_Income_and_Census_Data - transformations of census tracts and household income data; tables pushed to SQLite database
+        ** income - transformation of salary data; tables pushed to SQLite
+        ** Philly_Schools - school data cleaned and transformed tables pushed to SQLite
    * API calls with Flask - pull data into javascript files using Python (Flask)
-   * Visualizations - analyze the data in javascript files and create visualizations using [Plotly](https://plotly.com/) and [Leaflet](https://leafletjs.com/)
-   ** the visualizations must allow for user interaction and load to html pages
+        ** app.py - flask app created routes connecting to tables in SQLite
+   * Visualizations - analyze the data in javascript files and create visualizations using [Plotly](https://plotly.com/) and [Leaflet](https://leafletjs.com/). The visualizations must allow for user interaction and load to html pages
