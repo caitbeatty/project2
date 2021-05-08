@@ -41,14 +41,14 @@ The following analysis looks at some of these factors, ones that would be most i
            * styles.css
        * **js**
            * homepage_plot.js
-		* code to transform census tract and household income information
-		* use Leaflet to create visualizations
+			* code to transform census tract and household income information
+			* use Leaflet to create visualizations
            * salary_plot.js
-		* code to transform income information by gender
-		* use Plotly to create visualizations
+			* code to transform income information by gender
+			* use Plotly to create visualizations
            * schools.js
-		* code to transform school data, including school ratings
-		* use Leaflet to create visualizations
+			* code to transform school data, including school ratings
+			* use Leaflet to create visualizations
 
 
 
