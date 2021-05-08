@@ -34,8 +34,9 @@ d3.json("/api/v1.0/censustracts").then((data) => {
 
 
     // Remove records with NaN lat or lng values
-    coordinates.splice(210);
+    coordinates.splice(210,1);
 
+    console.log(coordinates)
     // Create LayerGroups for tract and household income information
     // each layerGroup will be added to myMap once populated
     var tracts = new L.LayerGroup();
