@@ -12,4 +12,4 @@ The following analysis looks at some of these factors, ones that would be most i
    * Load data to SQLite - once cleaned data was loaded as tables to a SQLite database
    * API calls with Flask - pull data into javascript files using Python (Flask)
    * Visualizations - analyze the data in javascript files and create visualizations using [Plotly](https://plotly.com/) and [Leaflet](https://leafletjs.com/)
-     ** the visualizations must allow for user interaction and load to html pages
+   ** the visualizations must allow for user interaction and load to html pages
