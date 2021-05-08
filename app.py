@@ -97,7 +97,7 @@ def school():
     # Create session (link) from SQLite to Flask 
     session = Session(engine)
 
-    philly_schools = session.query(schools.id, schools.school_name, schools.abbrv_name, schools.school_level, schools.type, schools.grade_level, schools.geolocation, schools.address, schools.website).all()
+    philly_schools = session.query(schools.id, schools.school_name, schools.abbrv_name, schools.school_level, schools.type, schools.grade_level, schools.geolocation, schools.address, schools.website, schools.spr_score).all()
 
     session.close()
 

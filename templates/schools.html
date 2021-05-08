@@ -1,104 +1,128 @@
-<!-- Code for third page -->
+<!-- Code for Home page -->
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="#" />
+<head>
 
-    <title>Philadelphia Schools</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="shortcut icon" href="#" /> -->
 
-    <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="/../static/css/bootstrap.min.css" media="screen">
+  <title>Living in Philadelphia</title>
 
-    <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="/../static/css/styles.css" media="screen">
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="/../static/css/bootstrap.min.css" media="screen">
 
-  </head>
 
-  <body>
-    <!-- Start of navbar -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid navbar-custom">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="row">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="/" id="logo">Home</a>
-            </div>
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="/../static/css/homepage.css" media="screen">
+
+</head>
+
+<body>
+  <!-- Start of navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navbar-custom">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="row">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="col-xs-9 phone-nav">
+            <a class="navbar-brand" href="#" id="logo">Home</a>
           </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right navbar-right-custom">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="salary">Salaries per Gender</a></li>
-                  <li><a href="schools">Schools</a></li>
-                </ul>
-            </ul>
-          </div><!-- /.navbar-collapse -->
         </div>
-      </div><!-- /.container-fluid -->
-    </nav>
-    <!-- End of navbar -->
 
-    <!-- Start of container -->
-    <div class="container">
-      <article class="description-content row">
-        <div class="col-xs-12">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right navbar-right-custom">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">Plots <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="salary">Salaries per gender</a></li>
+                <li><a href="schools">Schools</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End of navbar -->
+
+  <!-- Start of container -->
+  <div class="container">
+    <section class="row">
+      <div class="col-md-8">
+        <article class="description-content">
           <h1 class="description-header">Philadelphia Schools</h1>
           <hr class="description-hr"/>
-          <p class="description-text">Chart representing trend in Philly Schools data</p>
-          <div id="myDiv"></div>
-          <br>
-          <br>
-          <br>
-          <br>
+          <div id="map"></div>
+          <p>This website is designed to serve as resource for anyone interested in moving to the city of Philadelphia. The information presented here is specifically designed to address factors that apply to young families and individuals early in their careers. The census tracts are used as a backdrop for this analysis, providing a logical demarcation between different areas of the city. According to the Census Tracts 2010 data, the city of Philadelphia has 384 distinct census tracts. </p>
+        </article>
+      </div>
+      <div class="col-md-4">
 
-        </div>
-        <div class="col-md-12">
-          <br>
-          <br>
-          <br>
-          <h2 class="comparison-header">The Philadelphia School District .............</h2>
-          <!-- <a href="enter path here"><img src="assets/images/Fig4.png" alt="text here" class="comparison-image img-responsive"></a> -->
-        </div>
-      </article>
-    </div>
-    <!-- End of container  -->
+        <!-- Start of Visualizations imageNav Area -->
+        <section id="imageNav-area">
+          <div class="imageNav-content">
+            <h2 class="imageNav-header">Additional Items of Interest</h2>
+            <hr />
+            <div id="images">
+              <a href="salary">
+                <p> Click here for salary by gender!</p>
+                <a href="schools">
+                  <p>Click here for information on schools!</p>
+            </div>
+          </div>
+        </section>
+        <!-- End of the Visualizations imageNav Area -->
 
-    <!-- Start of footer -->
-    <footer class="footer navbar-fixed-bottom">
-      <div class="two-toned-footer-color"></div>
-      <p class="text-muted text-muted-footer text-center">
-       Sources of Data to build chart- https://datausa.io/profile/geo/philadelphia-pa/ Need to change for schools data
-      </p>
-    </footer>
-    <!-- End of footer -->
+      </div>
+    </section>
+  </div>
+  <!-- End of container -->
 
-    <!-- jQuery CDN -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <!-- Start of footer -->
+  <footer class="footer navbar-fixed-bottom">
+    <div class="two-toned-footer-color"></div>
+    <p class="text-muted text-muted-footer text-center">
+      Data Source to build chart: https://www.opendataphilly.org/
+    </p>
+  </footer>
+  <!-- End of footer -->
+   <!-- jQuery CDN -->
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    <!-- Bootstrap CDN -->
-    <!-- <script src="salary_plot.js"></script> -->
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
 
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="{{ url_for('static', filename='js/schools.js') }}"></script>
-    <!-- <script src="{{ url_for('static', filename='js/salary_plot.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
-  </body>
+  <!-- Bootstrap CDN -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+   <!-- API key -->
+   <script type="text/javascript" src="static/js/config.js"></script>
+
+  <!-- JavaScript -->
+  <script src="../static/js/schools.js"></script>
+
+</body>
 
 </html>
