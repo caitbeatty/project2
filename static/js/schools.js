@@ -1,47 +1,62 @@
-d3.json("/api/v1.0/censustracts").then((data) => {
-    var coord_dict = {};
-    var prev_geoID = 42101009400;
-    var geoid = 0;
-    var curr_arr = [];
-    var coord_arr = [];
-    var coordinates = [];
+d3.json("/api/v1.0/phillyschools").then((data)=> {
+    
+    console.log(data);
 
-    // Loop through data to find lat and lng for each coordinate point 
-    // in a polygon for every census tract
-    // Save data in a dictionary
-    data.map(row => {
-        geoid = parseInt(row[2])
-        if (geoid == prev_geoID) {
-            curr_arr = [parseFloat(row[6]), parseFloat(row[5])]
-            coord_arr.push(curr_arr);
-            prev_geoID = geoid;
-            coord_dict[geoid] = coord_arr;
-        }
-        else {
-            coord_arr = [];
-            prev_geoID = geoid;
-            curr_arr = [parseFloat(row[6]), parseFloat(row[5])];
-            coord_arr.push(curr_arr);
-            coord_dict[geoid] = coord_arr;
-        };
-    });
+    var schools = [];
+    var locations = [];
+    var scores = [];
+    var grade_level = [];
+    var school_type = [];
 
-    // Push coordinate records into an array
-    Object.entries(coord_dict).forEach(([key, value]) => {
-        coordinates.push(value);
-    });
+    for (var i = 0; i < data.length; i++) {
+        schools.push(
+            data[i][[1]]  
+        );  
 
+        scores.push(
+            data[i][[9]]  
+        ); 
 
-    // Remove records with NaN lat or lng values
-    coordinates.splice(210,1);
+        grade_level.push(
+            data[i][[3]]  
+        ); 
 
-    console.log(coordinates)
-    // Create LayerGroups for tract and household income information
-    // each layerGroup will be added to myMap once populated
-    var tracts = new L.LayerGroup();
-    var household = new L.LayerGroup();
+        school_type.push(
+            data[i][[4]]  
+        ); 
+        
+        var splitLoc = data[i][6].split(",");
+        var latInt = parseFloat(splitLoc[0]);
+        var longInt = parseFloat(splitLoc[1]);
 
-    // Create layers to be the background of the map
+        // console.log(splitLoc);
+        // console.log(latInt);
+        // console.log(longInt);
+
+        locations.push(
+            [latInt, longInt]
+        )
+    }
+
+    console.log(locations);
+    //console.log(longitude);
+
+    var schoolMarkers = [];
+
+    for (var i = 0; i < locations.length; i++) {
+  // loop through the cities array, create a new marker, push it to the cityMarkers array
+        schoolMarkers.push(
+            L.marker(locations[i]).bindPopup("<h1>" + schools[i] + "<br>" + "<hr>"+ "Grade Level: " + grade_level[i] + "<br>" + "<hr>"+ "School Type: " + school_type[i] + "<br>" + "<hr>"+ "SPR PERCENT POINTS EARNED: " + scores[i] + "%" + "</h1>")
+        );
+    
+    console.log(schoolMarkers);
+}
+
+  // Add all the cityMarkers to a new layer group.
+  // Now we can handle them as one group instead of referencing each individually
+    var schoolLayer = L.layerGroup(schoolMarkers);
+
+    // Define variables for our tile layers
     var outdoormap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
         tileSize: 512,
@@ -68,72 +83,29 @@ d3.json("/api/v1.0/censustracts").then((data) => {
         accessToken: API_KEY
     });
 
-    // Create a map with default layers to display
-    var myMap = L.map("map", {
-        center: [40.007797, -75.125260],
-        zoom: 11,
-        layers: [
-            outdoormap,
-            tracts
-        ]
-    });
-    // set outdoormap as the default layout when page is loaded
-    outdoormap.addTo(myMap);
-
-    // Create polygon layer pulling data from the coordinates array
-    // Add data to tracts LayerGroup
-    L.polygon(coordinates, {
-        color: "purple",
-        fillcolor: "purple",
-        fillOpacity: 0.25
-    }).addTo(tracts);
-    // Add tracts LayerGroup to myMap
-    tracts.addTo(myMap);
-
-    // Define baseMaps object to hold base layers
+    // Only one base layer can be shown at a time
     var baseMaps = {
         "Outdoors": outdoormap,
         "Grayscale": grayscalemap,
         "Satellite": satellitemap
     };
 
-    // Create overlay object to hold overlay layer
+    // Overlays that may be toggled on or off
     var overlayMaps = {
-        "Census Tracts": tracts,
-        "Household Income": household
+      Schools: schoolLayer
     };
 
-    // Create a layer control
-    // Pass in our baseMaps and overlayMaps
+    // Create map object and set default layers
+    var myMap = L.map("map", {
+      center: [39.9526, -75.1652],
+      zoom: 12,
+      layers: [outdoormap, schoolLayer]
+    });
+
+    myMap.invalidateSize();
+
+    // Pass our map layers into our layer control
     // Add the layer control to the map
     L.control.layers(baseMaps, overlayMaps).addTo(myMap);
 
-    // Function to detemine marker size based on household income
-    function markerSize(income) {
-        return income / 10000
-    };
-
-    // Add circleMarkers to represent income values per GEOID
-    d3.json("/api/v1.0/census_household").then((householdData) => {
-        householdData.map(row => {
-            var lat = row[4]
-            var lng = row[5]
-            var householdIncome = row[1]
-            var GEOID = row[3]
-            marker = new L.circleMarker([lat, lng], {
-                radius: markerSize(householdIncome),
-                fillColor: "green",
-                color: "#000",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 0.8
-                // create popup values to represent household income for each GEOID
-                // add to household LayerGroup
-            }).bindPopup(`<strong>Household Income: </strong>$${householdIncome}<br>\
-            <strong>GEOID:</strong> ${GEOID}`).addTo(household);
-
-            // add household LayerGroup to myMap
-            household.addTo(myMap);
-        });
-    });
-});
+  });

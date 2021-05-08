@@ -92,7 +92,7 @@ def salaries():
 
     return jsonify(salary)
 
-@app.route("/api/v1.0/schools")
+@app.route("/api/v1.0/phillyschools")
 def school():
     # Create session (link) from SQLite to Flask 
     session = Session(engine)
@@ -101,7 +101,7 @@ def school():
 
     session.close()
 
-    return philly_schools
+    return jsonify(philly_schools)
 
 @app.route("/api/v1.0/censustracts")
 def censusdata():
