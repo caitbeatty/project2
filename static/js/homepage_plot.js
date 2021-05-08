@@ -130,7 +130,7 @@ d3.json("/api/v1.0/censustracts").then((data) => {
                 fillOpacity: 0.8
                 // create popup values to represent household income for each GEOID
                 // add to household LayerGroup
-            }).bindPopup(`<strong>Household Income: $</strong>${householdIncome}<br>\
+            }).bindPopup(`<strong>Household Income: </strong>$${householdIncome}<br>\
             <strong>GEOID:</strong> ${GEOID}`).addTo(household);
 
             // add household LayerGroup to myMap
