@@ -13,7 +13,7 @@ The following analysis looks at some of these factors, ones that would be most i
    * **Visualizations** - analyze the data in javascript files and create visualizations using [Plotly](https://plotly.com/) and [Leaflet](https://leafletjs.com/). The visualizations must allow for user interaction and load to html pages
 
 ## File Structure: ##
-   * **API datasources **
+   * **API datasources**
        * householdInfo - initial transformation of household income information
            * household_income_summary.csv
        * Household_Income_and_Census_Data - transformations of census tracts and household income data; tables pushed to SQLite database
@@ -26,14 +26,14 @@ The following analysis looks at some of these factors, ones that would be most i
            * schools_clean.csv
        * **philly.sqlite** - database with all the tables
 
-   * app.py - flask app created routes connecting to tables in SQLite
+   * **app.py** - flask app created routes connecting to tables in SQLite
 
    * **Templates**
        * index.html - html code for the homepage
        * salaries.html - html code for the salaries page
        * schools.html - html code for the schools page
 
-   * ** Static **
+   * **Static**
        * **css**
            * .stylelintrc.json
            * bootstrap.min.css
